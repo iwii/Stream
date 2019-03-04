@@ -1,13 +1,17 @@
 package com.example.stream.dto;
 
+import com.example.stream.enums.Gender;
+
 public class Person {
 
+
+    Gender gender;
     private String name;
     private String lastName;
     private int age;
-    private String gender;
+    //private String gender;
 
-    public Person(String name, String lastName, int age, String gender) {
+   public Person(String name, String lastName, int age, Gender gender) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
@@ -38,11 +42,11 @@ public class Person {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -52,7 +56,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", gender='" + gender + '\'' +
+             //   ", gender='" + gender + '\'' +
                 '}';
     }
 }
