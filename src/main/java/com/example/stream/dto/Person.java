@@ -56,7 +56,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-             //   ", gender='" + gender + '\'' +
+               ", gender='" + gender + '\'' +
                 '}';
     }
 }

@@ -23,7 +23,10 @@ public class PersonRepoImpl implements PersonRepo {
 
         for (int i = 0; i < 10; i++) {
             personList.add(new Person(name, lastName, i + 10, Gender.FEMALE));
+            personList.add(new Person("Zbigniew", "Pies", i + 20, Gender.MALE));
+
         }
+        personList.add(new Person(null, null,  20, Gender.OTHER));
         return personList;
     }
 }
