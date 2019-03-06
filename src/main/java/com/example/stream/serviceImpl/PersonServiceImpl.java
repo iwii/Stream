@@ -35,9 +35,9 @@ public class PersonServiceImpl implements PersonService {
         return optionalPersonList
                 .map(List::stream).orElseGet(Stream::empty)
                 .filter(Objects::nonNull)
-                //.filter(x -> "Ala".equals(x.getName()) && (14 == x.getAge() || 15 == x.getAge() ))
                 //.filter(x -> "MALE".equals(x.getGender().toString()))
                 .filter(x -> Gender.FEMALE.equals(x.getGender()))
+                .filter(x -> "Ala".equals(x.getName()) && (14 == x.getAge() || 15 == x.getAge() ))
                 .collect(Collectors.toList());
     }
 }

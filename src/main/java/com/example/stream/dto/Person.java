@@ -2,20 +2,23 @@ package com.example.stream.dto;
 
 import com.example.stream.enums.Gender;
 
+import java.util.List;
+
 public class Person {
 
-
-    Gender gender;
     private String name;
     private String lastName;
     private int age;
-    //private String gender;
+    Gender gender;
+    List<Address> address;
 
-   public Person(String name, String lastName, int age, Gender gender) {
+    public Person(String name, String lastName, int age, Gender gender, List<Address> address) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
         this.gender = gender;
+        this.address = address;
+
     }
 
     public String getName() {
@@ -50,13 +53,22 @@ public class Person {
         this.gender = gender;
     }
 
+    public List<Address> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<Address> address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-               ", gender='" + gender + '\'' +
+                ", gender='" + gender + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
