@@ -7,7 +7,6 @@ import com.example.stream.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -35,9 +34,9 @@ public class PersonServiceImpl implements PersonService {
         return optionalPersonList
                 .map(List::stream).orElseGet(Stream::empty)
                 .filter(Objects::nonNull)
-                //.filter(x -> "Ala".equals(x.getName()) && (14 == x.getAge() || 15 == x.getAge() ))
                 //.filter(x -> "MALE".equals(x.getGender().toString()))
                 .filter(x -> Gender.FEMALE.equals(x.getGender()))
+                .filter(x -> "Ala".equals(x.getName()) && (14 == x.getAge() || 15 == x.getAge() ))
                 .collect(Collectors.toList());
     }
 }
